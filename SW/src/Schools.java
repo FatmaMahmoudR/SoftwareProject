@@ -1,4 +1,7 @@
 
-public class Schools extends Donation{
+public class Schools implements Service_provider{
+
+
+
 
 }

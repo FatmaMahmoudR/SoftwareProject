@@ -23,9 +23,22 @@ public class Client extends User{
 		mp.put(email,password);
 		
 	}
-	
-	
-	
+	public boolean search_service(ArrayList<Service>ss,String s)
+	{	
+		for(int i=0;i<ss.size();i++) {
+			if(ss.get(i).name==s) {
+				return true;
+			}
+			
+		}
+		return false;
+		
 
 	
+}
+public void request_refund (Map<Integer,Integer>mp,int refund_val) {
+		
+		int p=mp.get(ID);
+		mp.put(ID,p+refund_val);
+	}
 }

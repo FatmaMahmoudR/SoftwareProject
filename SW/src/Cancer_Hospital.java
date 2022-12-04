@@ -1,4 +1,7 @@
 
-public class Cancer_Hospital extends Donation{
+public class Cancer_Hospital implements Service_provider{
+
+	
+
 
 }

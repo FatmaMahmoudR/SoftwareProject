@@ -1,4 +1,10 @@
 
-public class Quarter extends Landline{
+public class Quarter implements Service_provider{
+	
+
+	
+	
+
+
 
 }

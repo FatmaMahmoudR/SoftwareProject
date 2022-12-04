@@ -20,8 +20,5 @@ public class Wallet implements Payment_behaviour{
 		
 		
 	
-	public void add (Map<Integer,Integer>mp,int price) {
-		int p=mp.get(ID);
-		mp.put(ID,p+price);
-	}
+	
 }
