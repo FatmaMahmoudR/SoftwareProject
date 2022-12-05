@@ -2,7 +2,9 @@
 public class Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		User u=new Client();
+		system.
+		u.sign_up( email,  password, mp)
 
 	}
 
