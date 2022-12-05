@@ -18,22 +18,26 @@ public class Admin extends User{
 		
 	}
 	 Scanner INPUT = new Scanner(System.in);
-	void AC_REJ(Map<Long,Integer>refund,Map<Long,Integer>wallet) {
-	       for (Entry<Long, Integer> entry : refund.entrySet()) {
-	            System.out.println("Key = " + entry.getKey() +
-	                             ", Value = " + entry.getValue());
+	void AC_REJ(Map<Long,Integer>wallet,int value,Long id) {
+		
+   		System.out.println("User with id "+id +" want to refund : "+value);
+
 	       		System.out.println("Enter 1 to accept");
 	       		System.out.println("Enter 2 to reject");
 	       		
 	       		int decide=INPUT.nextInt();
 	       		if(decide==1) {
-	       			int pp=wallet.get(entry.getKey());
-	       			wallet.put(entry.getKey(),entry.getValue()+pp);
+	       			System.out.print("Done");
+	       			int pp=wallet.get(id);
+	       			wallet.put(id, pp+value);
+	       			
 	       		}
-	       		refund.remove(entry.getKey());
+	       		else {
+	       			System.out.print("Rejected");
+	       		}
+	       		
 	     			
 	}
 	
 }
 
-}

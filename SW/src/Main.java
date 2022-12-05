@@ -19,17 +19,14 @@ public class Main {
 		Map<String,String>m=new HashMap<String, String>();//database
 		Map<Long,Integer>credit_card=new HashMap<Long,Integer>();//database
 		Map<Long,Integer>Wallet=new HashMap<Long,Integer>();//database
-		Map<Long,Integer>refund=new HashMap<Long,Integer>();//database
-
-
 		
+
 		credit_card.put((long) 1, 300);//user id ,his money
 		
 		Wallet.put((long) 1, 500);//user id ,his money
 		Wallet.put((long)2,300);
 
-		refund.put((long)1,500);
-		refund.put((long)2,300);
+		
 
 		Admin.put("Admin1", "Admin");
 		System.out.println("If you are admin enter 1");
@@ -42,9 +39,16 @@ public class Main {
 		String email=O3.next();
 		String password=O33.nextLine();
 		
-		((Admin) u).login(email,password,Admin);
+		if(((Admin) u).login(email,password,Admin)==true) {
+			System.out.println("if you want to see refund press 1 ");
+			Scanner a = new Scanner(System.in);
+			int c=a.nextInt();
+			if(c==1)
 		
-		}		
+		((Admin) u).AC_REJ(Wallet, 200,(long)1);
+		
+		}	
+		}
 		else {
 			Scanner O4 = new Scanner(System.in); 
 			Scanner O5 = new Scanner(System.in); 
