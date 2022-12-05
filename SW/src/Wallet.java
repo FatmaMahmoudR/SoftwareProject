@@ -1,22 +1,29 @@
 import java.util.Map;
 
 public class Wallet implements Payment_behaviour{
-	int ID;
+	Long ID;
 	
-	int get_id() {
+	
+	Long get_id() {
 		return ID;
 	}
 	
+	Wallet(Long id){
+		ID= id;
+	}
 	
-	public void pay(Map<Integer,Integer>mp,int price) {
+	public void pay(Map<Long,Integer>mp,int price) {
 		int p=mp.get(ID);
 		if(price<=p) {
-			mp.put(ID,p-price);
+			mp.put((long) ID,p-price);
 		}
 		else {
 			System.out.print("Not enough money in your wallet");
 		}
 	}
+
+
+	
 		
 		
 	

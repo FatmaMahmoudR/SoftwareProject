@@ -1,6 +1,18 @@
 
-public class Cancer_Hospital implements Service_provider{
+public class Cancer_Hospital extends Service_provider{
 
+public int value;
+	
+	public void setv(int v) {
+		value=v;
+	}
+	@Override
+	public int receipt(Service s) {
+		// TODO Auto-generated method stub
+		
+		return  value;
+	
+	}
 	
 
 

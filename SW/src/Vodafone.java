@@ -1,10 +1,34 @@
 
-public class Vodafone implements Service_provider{
+public class Vodafone extends Service_provider{
+
+	String phone;
+	public double value;
+	public int taxes;
+	
+	public void setp(String p) {
+		phone =p;
+	
+	}
+	public void setv(int v) {
+		value=v;
+	}
+	
 
 	@Override
-	public void show_options() {
-		System.out.println("Enter 1 for Mobile_recharge");
-		System.out.println("Enter 2 for Internet_payment");
+	public int receipt(Service s) {
+		if(s.get_name()=="Mobile_recharge") {
+		
+			taxes= (int) (value*1.1) ;
+		}
+		else if(s.get_name()=="Internet_Payment") {
 
+			taxes=100;
+		}
+		return taxes ;
+		
+	
+		
 	}
+	
+	
 }

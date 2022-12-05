@@ -1,11 +1,34 @@
 import java.util.ArrayList;
 
-public class Orange implements Service_provider {
-	@Override
-	public void show_options() {
-		System.out.println("Enter 1 for Mobile_recharge");
-		System.out.println("Enter 2 for Internet_payment");
+public class Orange extends Service_provider {
+	
+	String phone;
+	public double value;
+	public int taxes;
+	
+	public void setp(String p) {
+		phone =p;
+	
+	}
+	public void setv(int v) {
+		value=v;
+	}
+	
 
+	@Override
+	public int receipt(Service s) {
+		if(s.get_name()=="Mobile_recharge") {
+		
+			taxes= (int) (value*1.3) ;
+		}
+		else if(s.get_name()=="Internet_Payment") {
+
+			taxes=150;
+		}
+		return taxes ;
+		
+	
+		
 	}
 
 }

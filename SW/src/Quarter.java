@@ -1,10 +1,20 @@
 
-public class Quarter implements Service_provider{
-	
-
-	
-	
+public class Quarter extends Service_provider{
 
 
+	String phone;
+	public void setp(String p) {
+		phone =p;
+	
+	}
+	@Override
+	public int receipt(Service s) {
+		// TODO Auto-generated method stub
+		
+		return  250;
+	
+	}
+
+	
 
 }

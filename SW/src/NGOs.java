@@ -1,9 +1,17 @@
 
-public class NGOs implements Service_provider {
-	public void show_options() {
-		System.out.println("Enter 1 for Donations");
-		
+public class NGOs extends Service_provider {
 
+public int value;
+	
+	public void setv(int v) {
+		value=v;
+	}
+	@Override
+	public int receipt(Service s) {
+		// TODO Auto-generated method stub
+		
+		return  value;
+	
 	}
 	
 

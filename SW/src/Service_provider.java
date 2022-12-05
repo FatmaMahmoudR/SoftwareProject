@@ -1,7 +1,8 @@
-import java.util.ArrayList;
 
-public interface Service_provider {
+public abstract class Service_provider {
+
+	public abstract int receipt(Service s);
+
 	
 
-	
 }
