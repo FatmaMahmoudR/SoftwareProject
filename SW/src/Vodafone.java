@@ -12,7 +12,14 @@ public class Vodafone extends Service_provider{
 	public void setv(int v) {
 		value=v;
 	}
-	
+	public String get_name() {
+		return "Vodafone";
+	}
+	public float offer_percent(){
+		Offer obj=new Specific();
+		((Specific)obj).set_offer(30);
+		return obj.getoffer();
+	}
 
 	@Override
 	public int receipt(Service s) {

@@ -6,7 +6,9 @@ public class Monthly extends Service_provider{
 		phone =p;
 	
 	}
-
+	public String get_name() {
+		return "Monthly";
+	}
 	@Override
 	public int receipt(Service s) {
 		// TODO Auto-generated method stub
@@ -14,6 +16,10 @@ public class Monthly extends Service_provider{
 		return  5;
 	
 	}
-	
+	public float offer_percent(){
+		Offer obj=new Specific();
+		((Specific)obj).set_offer(50);
+		return obj.getoffer();
+	}
 
 }

@@ -1,9 +1,14 @@
 
 public class Overall  extends Offer{
 
-	@Override
-	public int offerpercent() {
+	
+	 public  String offer_name() {
+		 return "Overall";
+	 }
+
+	public int getoffer() {
 		return 10;
 	}
-
+	
+		
 }

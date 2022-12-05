@@ -10,11 +10,22 @@ public class Orange extends Service_provider {
 		phone =p;
 	
 	}
+	Orange(){
+		System.out.print("You are now on the system Orange");
+
+	}
+	public float offer_percent(){
+		Offer obj=new Specific();
+		((Specific)obj).set_offer(40);
+		return obj.getoffer();
+	}
 	public void setv(int v) {
 		value=v;
 	}
 	
-
+	public String get_name() {
+		return "Orange";
+	}
 	@Override
 	public int receipt(Service s) {
 		if(s.get_name()=="Mobile_recharge") {

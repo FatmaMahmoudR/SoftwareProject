@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Landline extends Service{
 	
 	Long id;
-	public void setid(Long idd){
-		id=idd;
-	}
+	public  void setid(Long id) {
+		this.id=id;
+	};
+
 
 	public Long getid() {
 		return id;
@@ -14,7 +15,7 @@ public class Landline extends Service{
 	Landline(){
 		name="Landline";
 	}
-	String get_name() {
+	public String get_name() {
 		return "Landline";
 	}
 	
@@ -23,7 +24,7 @@ public class Landline extends Service{
 		 Scanner I20 = new Scanner(System.in);
 		 System.out.println("Enter your Phone Number ");
 		 String phone =I20.nextLine();	
-		 ((We) p).setp(phone);
+	
 		 
 		 int r = p.receipt(s);
 		 System.out.println("Your Bill is "+r);
@@ -34,33 +35,43 @@ public class Landline extends Service{
 		int n=I21.nextInt();	
 		if(n==1) {
 			 pay_behave = new Wallet(id);
+				pay_behave.set_r(r);
+
 			 
 		}else if(n==2) {
 			System.out.println("Enter Your CreditCard Number");
 			Scanner I22 = new Scanner(System.in);
 			Long card_num=I22.nextLong();
 			pay_behave = new Credit_card(card_num,card_num);
+			pay_behave.set_r(r);
+
 		
 		}
 		return pay_behave;
 		
 	}
 	
-	
-	 Service_provider create(int type) {
+	public void show_options()
+	{
+		System.out.println("Enter 1 for Quarter");
+		System.out.println("Enter 2 for Monthly");
+		
+	}
+	Payment_behaviour create(int type) {
 		 Service_provider p=null;
-		 
+		 Payment_behaviour pp=null;
 		 if(type==1) {
 			 p=new Quarter();
-			 rechageProccess(p);
+			pp= rechageProccess(p);
 		 }
 		 else if(type==2) {
 			 p=new Monthly();
-			 rechageProccess(p);
+			pp= rechageProccess(p);
 
 		 }
-		
-		return p;
+		 pp.set_provider(p);
+
+		return pp;
 	 }
 
 

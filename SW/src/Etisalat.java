@@ -12,8 +12,14 @@ public class Etisalat extends Service_provider {
 	public void setv(int v) {
 		value=v;
 	}
-	
-
+	public String get_name() {
+		return "Etisalat";
+	}
+	public float offer_percent(){
+		Offer obj=new Specific();
+		((Specific)obj).set_offer(20);
+		return obj.getoffer();
+	}
 	@Override
 	public int receipt(Service s) {
 		

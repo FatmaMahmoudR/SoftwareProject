@@ -6,6 +6,9 @@ public int value;
 	public void setv(int v) {
 		value=v;
 	}
+	public String get_name() {
+		return "Cancer_Hospital";
+	}
 	@Override
 	public int receipt(Service s) {
 		// TODO Auto-generated method stub
@@ -13,7 +16,11 @@ public int value;
 		return  value;
 	
 	}
-	
+	public float offer_percent() {
+		Offer obj=new Specific();
+		((Specific)obj).set_offer(0);
+		return obj.getoffer();
+	}
 
 
 }

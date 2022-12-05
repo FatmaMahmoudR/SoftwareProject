@@ -10,6 +10,9 @@ public class Client extends User{
 	 Client() {
 		ID++;
 	}
+	 int get_id() {
+		 return ID;
+	 }
 	 
 	@Override
 	public boolean login(String email, String password, Map<String, String> mp) {

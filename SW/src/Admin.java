@@ -18,8 +18,8 @@ public class Admin extends User{
 		
 	}
 	 Scanner INPUT = new Scanner(System.in);
-	void AC_REJ(Map<Integer,Integer>refund,Map<Integer,Integer>wallet) {
-	       for (Entry<Integer, Integer> entry : refund.entrySet()) {
+	void AC_REJ(Map<Long,Integer>refund,Map<Long,Integer>wallet) {
+	       for (Entry<Long, Integer> entry : refund.entrySet()) {
 	            System.out.println("Key = " + entry.getKey() +
 	                             ", Value = " + entry.getValue());
 	       		System.out.println("Enter 1 to accept");
@@ -35,4 +35,5 @@ public class Admin extends User{
 	}
 	
 }
+
 }

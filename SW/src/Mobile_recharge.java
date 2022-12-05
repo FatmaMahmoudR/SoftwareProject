@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Mobile_recharge extends Service{
 	Long id;
-	public void setid(Long idd){
-		id=idd;
+	public  void setid(Long id) {
+		this.id=id;
 	}
 
 	public Long getid() {
@@ -13,10 +13,10 @@ public class Mobile_recharge extends Service{
 	Mobile_recharge(){
 		super.name="Mobile_recharge";
 	}
-	String  get_name() {
+	public String  get_name() {
 		return "Mobile_recharge";
 	}
-	void show_options()
+	public void show_options()
 	{
 		System.out.println("Enter 1 for WE");
 		System.out.println("Enter 2 for Etisalat");
@@ -31,55 +31,70 @@ public class Mobile_recharge extends Service{
 		 String phone=I2.nextLine();
 		 System.out.println("Enter Value to recharge");
 		 int value=I2.nextInt();
-		 ((We) p).setp(phone);
-		 ((We) p).setv(value);
+		 
+		  p.setv(value);
 		 
 		 int r = p.receipt(s);
 		 System.out.println("Your Bill is "+r);
 		 
 		System.out.println("Enter 1 for Wallet");
 		System.out.println("Enter 2 for CreditCard");
+		System.out.println("Enter any number for default");
+
 		Scanner I3 = new Scanner(System.in);
 		int n=I3.nextInt();	
 		if(n==1) {
 			 pay_behave = new Wallet(id);
 			 
 			 
+			 pay_behave.set_r(r);
+			 
 		}else if(n==2) {
-			System.out.println("Enter Your CreditCard Number");
+			System.out.println("Enter Your CreditCard Number[ Enter 1]");
 			Scanner I4 = new Scanner(System.in);
 			Long card_num=I4.nextLong();
 			pay_behave = new Credit_card(card_num,card_num);
-		
+			pay_behave.set_r(r);
+
+		}
+		else {
+			System.out.println("you havnot select payment way so the default is credit card");
+
+			 pay_behave = new Credit_card(id,id);
+			 pay_behave.set_r(r);
+
 		}
 		return pay_behave;
 		
 	}
 	
-	 Service_provider create(int type) {
+	Payment_behaviour create(int type) {
 		 Service_provider p = null;
+		 Payment_behaviour pp=null;
 		 
 		 
 		 if(type==1) {
 			 p=new We();
-			 rechageProccess( p);
+			
+			pp= rechageProccess( p);
 			 
 		 }
 		 else if(type==2) {
 			 p=new Etisalat();
-			 rechageProccess( p);
+			pp= rechageProccess( p);
 			 
 		 }
 		 else if(type==3) {
 			 p=new Orange();
-			 rechageProccess( p);
+			pp= rechageProccess( p);
 		 }
 		 else if(type==4) {
 			 p=new Vodafone();
-			 rechageProccess( p);
+			pp= rechageProccess( p);
 		 }
-		 
-		return p;
+		 pp.set_provider(p);
+
+		return pp ;
 	 }
 	 
 	 

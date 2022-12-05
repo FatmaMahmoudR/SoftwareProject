@@ -2,6 +2,9 @@
 public class Schools extends Service_provider{
 
 	public int value;
+	public String get_name() {
+		return "Schools";
+	}
 	
 	public void setv(int v) {
 		value=v;
@@ -12,6 +15,11 @@ public class Schools extends Service_provider{
 		
 		return  value;
 	
+	}
+	public float offer_percent() {
+		Offer obj=new Specific();
+		((Specific)obj).set_offer(0);
+		return obj.getoffer();
 	}
 
 
