@@ -14,7 +14,9 @@ public class Landline extends Service{
 	Landline(){
 		name="Landline";
 	}
-	
+	String get_name() {
+		return "Landline";
+	}
 	
 	public Payment_behaviour rechageProccess(Service_provider p) {
 		Service s =new Mobile_recharge();

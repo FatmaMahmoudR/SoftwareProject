@@ -13,6 +13,9 @@ public class Internet_Payment extends Service {
 	Internet_Payment(){
 		name="Internet_Payment";
 	}
+	String get_name() {
+		return "Internet_Payment";
+	}
 	void show_options()
 	{
 		System.out.println("Enter 1 for WE");

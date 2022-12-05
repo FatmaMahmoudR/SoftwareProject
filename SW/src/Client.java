@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Client extends User{
+
 
 	static int ID=0;
 	
@@ -10,12 +12,31 @@ public class Client extends User{
 	}
 	 
 	@Override
-	public void login(String email, String password, Map<String, String> mp) {
+	public boolean login(String email, String password, Map<String, String> mp) {
 		// TODO Auto-generated method stub
-		
-		if(mp.get(email)==password) {
-			System.out.println("Welcome ");
-		}else System.out.println("Not Exist");
+		boolean b=false;
+		 for (Entry<String, String> entry : mp.entrySet()) {
+			
+			 if(entry.getKey().equals(email)&&entry.getValue().equals(password)) {
+				 
+
+
+				 b=true;
+				 break;
+			 }
+		 }
+		 
+		 if(b==true) {
+			 System.out.println("Welcome");
+
+			 return true;
+
+		  }
+		 else {
+			 System.out.println("Not exist");
+			 return false;
+
+		 }
 		
 		
 	}
@@ -41,4 +62,6 @@ public void request_refund (Map<Integer,Integer>mp,int refund_val) {
 		int p=mp.get(ID);
 		mp.put(ID,p+refund_val);
 	}
+
+
 }

@@ -7,11 +7,14 @@ public class Admin extends User{
 
 
 	@Override
-	public void login(String email, String password, Map<String, String> mp) {
+	public boolean login(String email, String password, Map<String, String> mp) {
 		// TODO Auto-generated method stub
-		if(mp.get(email)==password) {
+		if(mp.get(email)!=null&&mp.get(email).equals(password)) {
 			System.out.println("Welcome Admin");
-		}else System.out.println("Access Denied");
+			return true;
+		}
+		System.out.println("Access Denied");
+			return false;
 		
 	}
 	 Scanner INPUT = new Scanner(System.in);

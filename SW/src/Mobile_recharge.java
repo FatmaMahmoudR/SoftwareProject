@@ -13,6 +13,9 @@ public class Mobile_recharge extends Service{
 	Mobile_recharge(){
 		super.name="Mobile_recharge";
 	}
+	String  get_name() {
+		return "Mobile_recharge";
+	}
 	void show_options()
 	{
 		System.out.println("Enter 1 for WE");

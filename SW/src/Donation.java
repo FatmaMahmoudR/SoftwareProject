@@ -11,7 +11,9 @@ public class Donation extends Service {
 	public Long getid() {
 		return id;
 	}
-	
+	String get_name() {
+		return "Donation";
+	}
 	Donation(){
 		name="Donation";
 	}
