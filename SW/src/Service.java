@@ -1,8 +1,10 @@
 
 public abstract class Service {
-public Payment_behaviour p;
+public Payment_behaviour pay_behave;
+public String name;
  
-String name;
+
+
 String get_name() {
 	return name;
 }

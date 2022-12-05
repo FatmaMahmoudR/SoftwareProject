@@ -1,10 +1,19 @@
 
-public class Monthly implements Service_provider{
+public class Monthly extends Service_provider{
+
+	String phone;
+	public void setp(String p) {
+		phone =p;
+	
+	}
 
 	@Override
-	public void show_options() {
-		System.out.println("Enter 1 for Landline");
-
+	public int receipt(Service s) {
+		// TODO Auto-generated method stub
+		
+		return  5;
+	
 	}
+	
 
 }
