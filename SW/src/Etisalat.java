@@ -16,6 +16,7 @@ public class Etisalat extends Service_provider {
 
 	@Override
 	public int receipt(Service s) {
+		
 		if(s.get_name()=="Mobile_recharge") {
 		
 			taxes= (int) (value*1.2) ;
